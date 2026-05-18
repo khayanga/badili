@@ -100,16 +100,15 @@ export default function Hero() {
           {/* ───────────────── LEFT ───────────────── */}
           <div className="relative z-10">
             {/* Eyebrow */}
-            <motion.div {...fadeUp(0)}>
+           
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
                 Digital Agency · Nairobi
               </div>
-            </motion.div>
+            
 
             {/* Heading */}
-            <motion.h1
-              {...fadeUp(0.1)}
+            <h1
               className="max-w-2xl font-display text-[clamp(3rem,7vw,5.5rem)] font-black leading-[0.96] tracking-tight text-foreground"
             >
               We grow brands
@@ -117,22 +116,21 @@ export default function Hero() {
               <span className=" text-primary">
                 that grow the planet.
               </span>
-            </motion.h1>
+            </h1>
 
             {/* Description */}
-            <motion.p
-              {...fadeUp(0.22)}
+            <p
               className="mt-7 max-w-xl text-[1rem] leading-[1.9] text-muted-foreground"
             >
               Digital solutions for sustainable and impact-driven
               businesses. We help brands strengthen visibility,
               communicate value clearly, and scale confidently
               across Africa.
-            </motion.p>
+            </p>
 
             {/* CTA */}
-            <motion.div
-              {...fadeUp(0.34)}
+            <div
+              
               className="mt-10 flex flex-wrap gap-4"
             >
               <a
@@ -148,11 +146,11 @@ export default function Hero() {
               >
                 Explore services
               </a>
-            </motion.div>
+            </div>
 
             {/* Social proof */}
-            <motion.div
-              {...fadeUp(0.46)}
+            <div
+          
               className="mt-12 flex items-center gap-4"
             >
               {/* avatars */}
@@ -177,12 +175,12 @@ export default function Hero() {
                 </span>{" "}
                 transformed across East Africa
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* ───────────────── RIGHT ───────────────── */}
-          <motion.div
-            {...fadeUp(0.2)}
+          <div
+          
             className="relative flex min-h-[520px] items-center justify-center rounded-[2rem] border border-border bg-card"
           >
             {/* grid overlay */}
@@ -293,7 +291,7 @@ export default function Hero() {
                 <ChevronDown size={16} />
               </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </Container>
     </section>
