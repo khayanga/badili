@@ -1,94 +1,301 @@
-
 "use client";
+
+import { motion } from "framer-motion";
+import {
+  ChevronDown,
+  TrendingUp,
+  Palette,
+  Laptop,
+  Lightbulb,
+} from "lucide-react";
+import Container from "./Container";
+
+// ─────────────────────────────────────────────────────────
+// Data
+// ─────────────────────────────────────────────────────────
+
+const avatars = [
+  { initials: "BG" },
+  { initials: "FF" },
+  { initials: "AK" },
+  { initials: "VG" },
+];
+
+const orbitIcons = [
+  {
+    icon: TrendingUp,
+    label: "Growth",
+    pos: "top-[12%] left-1/2 -translate-x-1/2",
+  },
+  {
+    icon: Palette,
+    label: "Design",
+    pos: "top-1/2 right-[12%] -translate-y-1/2",
+  },
+  {
+    icon: Laptop,
+    label: "Build",
+    pos: "bottom-[12%] left-1/2 -translate-x-1/2",
+  },
+  {
+    icon: Lightbulb,
+    label: "Strategy",
+    pos: "top-1/2 left-[12%] -translate-y-1/2",
+  },
+];
+
+const stats = [
+  {
+    label: "Brands grown",
+    value: "8+",
+    sub: "across East Africa",
+    pos: "top-[8%] left-[4%]",
+  },
+  {
+    label: "Industries",
+    value: "4+",
+    sub: "impact sectors",
+    pos: "top-[10%] right-[4%]",
+  },
+  {
+    label: "Purpose-driven",
+    value: "100%",
+    sub: "mission-led work",
+    pos: "bottom-[10%] left-[5%]",
+  },
+  {
+    label: "Planet",
+    value: "1",
+    sub: "worth protecting",
+    pos: "bottom-[8%] right-[4%]",
+  },
+];
+
+// ─────────────────────────────────────────────────────────
+// Animations
+// ─────────────────────────────────────────────────────────
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: {
+    duration: 0.7,
+    delay,
+    ease: "easeOut",
+  },
+});
+
+// ─────────────────────────────────────────────────────────
+// Component
+// ─────────────────────────────────────────────────────────
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full flex items-center px-[5%] pt-28 pb-24 overflow-hidden bg-[#010d14] text-slate-50">
-      
-      {/* Dot grid bg */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-100"
-        style={{
-          backgroundImage: `linear-gradient(rgba(6,182,212,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.06) 1px, transparent 1px)`,
-          backgroundSize: "48px 48px",
-          maskImage: "radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent)",
-        }}
-      />
-      <div className="absolute -top-48 -left-36 w-175 h-175 rounded-full bg-cyan-600/10 blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-0 right-[15%] w-100 h-100 rounded-full bg-cyan-500/6 blur-[120px] pointer-events-none" />
+    <section className="relative overflow-hidden bg-background pt-28 pb-20 lg:pt-42 lg:pb-28">
+      {/* ambient glow */}
+      <div className="pointer-events-none absolute top-[-120px] left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
-      <div className="relative  md:mt-20 z-10 md:max-w-7xl mx-auto w-full grid grid-cols-1 xl:grid-cols-[1fr_400px] gap-16 items-center">
-        
-        {/* Left */}
-        <div>
-          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] uppercase text-cyan-400 bg-cyan-500/8 border border-cyan-500/20 px-4 py-1.5 rounded-full mb-7">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-pulse" />
-            Digital solutions for green businesses
+      <Container>
+        <div className="grid items-center gap-14 lg:grid-cols-2">
+          {/* ───────────────── LEFT ───────────────── */}
+          <div className="relative z-10">
+            {/* Eyebrow */}
+            <motion.div {...fadeUp(0)}>
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
+                Digital Agency · Nairobi
+              </div>
+            </motion.div>
+
+            {/* Heading */}
+            <motion.h1
+              {...fadeUp(0.1)}
+              className="max-w-2xl font-display text-[clamp(3rem,7vw,5.5rem)] font-black leading-[0.96] tracking-tight text-foreground"
+            >
+              We grow brands
+              <br />
+              <span className=" text-primary">
+                that grow the planet.
+              </span>
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p
+              {...fadeUp(0.22)}
+              className="mt-7 max-w-xl text-[1rem] leading-[1.9] text-muted-foreground"
+            >
+              Digital solutions for sustainable and impact-driven
+              businesses. We help brands strengthen visibility,
+              communicate value clearly, and scale confidently
+              across Africa.
+            </motion.p>
+
+            {/* CTA */}
+            <motion.div
+              {...fadeUp(0.34)}
+              className="mt-10 flex flex-wrap gap-4"
+            >
+              <a
+                href="#work"
+                className="inline-flex items-center justify-center rounded-2xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:scale-[1.02] hover:opacity-90"
+              >
+                See our work →
+              </a>
+
+              <a
+                href="#services"
+                className="inline-flex items-center justify-center rounded-2xl border border-border bg-card px-6 py-3 text-sm font-medium text-muted-foreground transition-all duration-300 hover:border-primary hover:text-primary"
+              >
+                Explore services
+              </a>
+            </motion.div>
+
+            {/* Social proof */}
+            <motion.div
+              {...fadeUp(0.46)}
+              className="mt-12 flex items-center gap-4"
+            >
+              {/* avatars */}
+              <div className="flex">
+                {avatars.map((avatar, i) => (
+                  <div
+                    key={avatar.initials}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-background bg-primary text-[11px] font-bold text-primary-foreground shadow-sm"
+                    style={{
+                      marginLeft: i === 0 ? 0 : "-10px",
+                      zIndex: avatars.length - i,
+                    }}
+                  >
+                    {avatar.initials}
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">
+                  8+ brands
+                </span>{" "}
+                transformed across East Africa
+              </div>
+            </motion.div>
           </div>
 
-          <h1 className="text-[clamp(2.8rem,6vw,4.8rem)] leading-[1.04] tracking-tight mb-6">
-            We grow brands<br />
-            that grow<br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-600 to-cyan-400">
-              the planet
-            </span>
-          </h1>
+          {/* ───────────────── RIGHT ───────────────── */}
+          <motion.div
+            {...fadeUp(0.2)}
+            className="relative flex min-h-[520px] items-center justify-center rounded-[2rem] border border-border bg-card"
+          >
+            {/* grid overlay */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:70px_70px] opacity-[0.03]" />
 
-          <p className=" text-md md:text-xl text-white/70 leading-[1.8] font-light max-w-xl mb-10">
-            We bridge the gap between impact and growth helping sustainable businesses communicate their value,
-            increase visibility, and scale through strategy, design, and technology.
-          </p>
+            {/* rings */}
+            {[220, 340, 460].map((size, i) => (
+              <div
+                key={size}
+                className="absolute rounded-full border border-dashed border-primary/15"
+                style={{
+                  width: size,
+                  height: size,
+                  opacity: 1 - i * 0.25,
+                }}
+              />
+            ))}
 
-          <div className="flex flex-wrap gap-4 mb-8">
-            <a
-              href="#services"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-cyan-700 hover:bg-cyan-600 text-white text-md font-bold tracking-wide rounded-xl transition-all duration-200 hover:-translate-y-0.5"
+            {/* center */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.7,
+                delay: 0.5,
+                ease: "easeOut",
+              }}
+              className="relative z-10 flex h-28 w-28 items-center justify-center rounded-full border border-primary/20 bg-primary shadow-[0_0_60px_hsl(var(--primary)/0.25)]"
             >
-              Explore our services
-              
-            </a>
-            <a
-              href="#about"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-transparent border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/6 text-cyan-100/70 text-md font-semibold rounded-xl transition-all duration-200"
-            >
-              Our story
-            </a>
-          </div>
+              <div className="text-center">
+                <span className="block text-[10px] uppercase tracking-[0.18em] text-primary-foreground/60">
+                  Badili
+                </span>
 
-          
-        </div>
+                <span className=" text-lg font-bold text-primary-foreground">
+                  Agency
+                </span>
+              </div>
+            </motion.div>
 
-        {/* Right — Stats panel */}
-        <div className="hidden xl:block relative">
-          <div className="rounded-2xl p-9 bg-white/2 border border-cyan-500/12 flex flex-col gap-7">
-            <div>
-              <div className="text-[2.8rem] font-georgia text-slate-100 leading-none tracking-tight mb-1">100%</div>
-              <div className="text-[12px] font-bold tracking-[0.22em] uppercase text-cyan-400">Purpose-driven clients</div>
-            </div>
-            <div className="h-px bg-cyan-500/8" />
-            <div>
-              <div className="text-[2.8rem] font-georgia text-slate-100 leading-none tracking-tight mb-1">5+</div>
-              <div className="text-[12px] font-bold tracking-[0.22em] uppercase text-cyan-400">Growth engines</div>
-            </div>
-            <div className="h-px bg-cyan-500/8" />
-            <div className="flex flex-col gap-3">
-              {[["Strategy", "95%", 95], ["Design", "90%", 90], ["Technology", "85%", 85]].map(([label, pct, w]) => (
-                <div key={label as string}>
-                  <div className="flex justify-between mb-1.5">
-                    <span className="text-[16px] text-white/70 font-medium">{label as string}</span>
-                    <span className="text-[16px] text-cyan-400 font-bold">{pct as string}</span>
-                  </div>
-                  <div className="h-0.5 rounded-full bg-cyan-500/10 overflow-hidden">
-                    <div className="h-full rounded-full bg-linear-to-r from-cyan-700 to-emerald-500" style={{ width: `${w}%` }} />
-                  </div>
+            {/* orbit icons */}
+            {orbitIcons.map(({ icon: Icon, label, pos }, i) => (
+              <motion.div
+                key={label}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.45,
+                  delay: 0.7 + i * 0.08,
+                }}
+                className={`absolute ${pos} z-20`}
+              >
+                <div className="group flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30">
+                  <Icon
+                    size={20}
+                    className="text-primary transition-transform duration-300 group-hover:scale-110"
+                  />
                 </div>
-              ))}
-            </div>
-          </div>
-         
+              </motion.div>
+            ))}
+
+            {/* floating stats */}
+            {stats.map(({ label, value, sub, pos }, i) => (
+              <motion.div
+                key={label}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.9 + i * 0.08,
+                }}
+                className={`absolute ${pos} rounded-2xl border border-border bg-card/80 px-4 py-3 backdrop-blur-xl`}
+              >
+                <p className="mb-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                  {label}
+                </p>
+
+                <p className="font-display text-2xl font-black text-primary">
+                  {value}
+                </p>
+
+                <p className="text-[11px] text-muted-foreground">
+                  {sub}
+                </p>
+              </motion.div>
+            ))}
+
+            {/* bottom indicator */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5 }}
+              className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1"
+            >
+              <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                scroll
+              </span>
+
+              <motion.div
+                animate={{ y: [0, 5, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1.6,
+                  ease: "easeInOut",
+                }}
+                className="text-muted-foreground"
+              >
+                <ChevronDown size={16} />
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
-

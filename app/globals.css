@@ -2,19 +2,21 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+/* @custom-variant dark (&:is(.dark *)); */
+@custom-variant dark (&:where(.dark, .dark *));
 
-/* ✅ THEME VARIABLES */
+
+
 @theme inline {
   
   --font-georgia: Georgia, "Times New Roman", serif;
   --font-poppins: "Poppins", system-ui, -apple-system, sans-serif;
 
-  --font-sans: var(--font-poppins);      /* Body text */
-  --font-heading: var(--font-georgia);   /* Headings */
+  --font-sans: var(--font-poppins);
+  --font-heading: var(--font-georgia);
   --font-mono: var(--font-geist-mono);
 
-  /* COLORS */
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -34,28 +36,30 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* CHARTS */
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
 
-  /* SIDEBAR */
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface2: var(--surface2);
+  --color-text: var(--text);
+  --color-text2: var(--text2);
+  --color-text3: var(--text3);
 
- 
+  
+  --color-bento1: var(--bento1);
+  --color-bento1t: var(--bento1t);
+  --color-bento2: var(--bento2);
+  --color-bento2t: var(--bento2t);
+
+  /* NAV */
+  --color-nav-bg: var(--nav-bg);
+
+  /* RADIUS */
+  --radius: 0.625rem;
 }
 
-/* LIGHT MODE */
+
 :root {
+  /* SHADCN */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
 
@@ -65,72 +69,235 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
 
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: #164e63;
+  --primary-foreground: #ffffff;
 
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --secondary: #e8f4f8;
+  --secondary-foreground: #164e63;
 
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted: #f4fbfd;
+  --muted-foreground: #3d6470;
 
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: #0891b2;
+  --accent-foreground: #ffffff;
 
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: #ef4444;
 
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: #bde0ea;
+  --input: #bde0ea;
+  --ring: #0891b2;
 
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  /* BADILI */
+  --bg: #f0f7fa;
+  --surface: #ffffff;
+  --surface2: #e8f4f8;
 
-  --radius: 0.625rem;
+  --text: #0c1a1f;
+  --text2: #3d6470;
+  --text3: #7aabb8;
 
-  
+  --bento1: #164e63;
+  --bento1t: #cffafe;
+
+  --bento2: #0891b2;
+  --bento2t: #ffffff;
+
+  --nav-bg: rgba(240, 247, 250, 0.9);
 }
 
 
 
-/* ✅ BASE STYLES */
+.dark {
+
+  --background: #060d10;
+  --foreground: #ecfeff;
+
+  --card: #0d1f28;
+  --card-foreground: #ecfeff;
+
+  --popover: #0d1f28;
+  --popover-foreground: #ecfeff;
+
+  --primary: #0891b2;
+  --primary-foreground: #ffffff;
+
+  --secondary: #0c1a20;
+  --secondary-foreground: #ecfeff;
+
+  --muted: #0c1a20;
+  --muted-foreground: #7ae8f9;
+
+  --accent: #22d3ee;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ef4444;
+
+  --border: #155e75;
+  --input: #155e75;
+  --ring: #22d3ee;
+
+  /* BADILI */
+  --bg: #060d10;
+  --surface: #0d1f28;
+  --surface2: #0c1a20;
+
+  --text: #ecfeff;
+  --text2: #7ae8f9;
+  --text3: #2b6880;
+
+  --bento1: #0c2d38;
+  --bento1t: #cffafe;
+
+  --bento2: #0e4b5a;
+  --bento2t: #cffafe;
+
+  --nav-bg: rgba(6, 13, 16, 0.92);
+}
+
+
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
 
   html {
-    @apply font-sans antialiased;
+    @apply scroll-smooth antialiased;
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-[var(--bg)] text-[var(--text)] font-sans overflow-x-hidden;
   }
 
-  /* HEADINGS → GEORGIA */
   h1 {
     @apply font-heading font-bold tracking-tight;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
   }
 
   h2 {
-    @apply font-heading font-semibold tracking-tight;
-    letter-spacing: -0.02em;
+    @apply font-heading font-bold tracking-tight;
+    letter-spacing: -0.03em;
   }
 
-  h3 {
-    @apply font-heading font-semibold;
-  }
-
-  h4, h5, h6 {
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 
-  /* BODY TEXT → POPPINS (FORCE CONSISTENCY) */
   p {
     @apply font-sans;
+  }
+
+  section {
+    @apply py-24;
+  }
+}
+
+/* =========================================================
+   REUSABLE UTILITIES
+========================================================= */
+
+@layer utilities {
+  .container-main {
+    @apply mx-auto max-w-7xl px-5;
+  }
+
+  .section-label {
+    @apply mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-accent;
+  }
+
+  .section-title {
+    @apply font-heading text-4xl font-bold leading-tight md:text-6xl;
+  }
+
+  .section-sub {
+    @apply mt-5 max-w-2xl text-base leading-8 text-[var(--text2)];
+  }
+
+  .glass-nav {
+    background: var(--nav-bg);
+    backdrop-filter: blur(14px);
+  }
+
+  .hero-blob {
+    background: radial-gradient(
+      ellipse,
+      rgba(8, 145, 178, 0.12) 0%,
+      transparent 70%
+    );
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-accent;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-xl border border-border bg-transparent px-8 py-4 text-sm font-medium transition-all duration-300 hover:border-accent hover:text-accent;
+  }
+
+  .btn-white {
+    @apply inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-sm font-semibold text-primary transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .bento-card {
+    @apply rounded-[24px] border border-border bg-[var(--surface)] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent;
+  }
+
+  .bento-dark {
+    background: var(--bento1);
+    color: var(--bento1t);
+    border-color: transparent;
+  }
+
+  .bento-accent {
+    background: var(--bento2);
+    color: var(--bento2t);
+    border-color: transparent;
+  }
+
+  .ticker {
+    animation: ticker 30s linear infinite;
+  }
+
+  .fade-up {
+    animation: fadeUp 0.7s ease forwards;
+  }
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blobMove {
+  from {
+    transform: scale(1) translate(0, 0);
+  }
+
+  to {
+    transform: scale(1.08) translate(-30px, 40px);
   }
 }

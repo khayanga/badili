@@ -1,30 +1,17 @@
 // cta.tsx
 "use client";
+
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-
-const proofPoints = [
-  {
-    icon: "users",
-    text: "100% purpose-driven client portfolio—we only work with brands we believe in",
-  },
-  {
-    icon: "trend",
-    text: "Strategy, design & tech under one roof—no juggling multiple agencies",
-  },
-  {
-    icon: "check",
-    text: "We respond within 24 hours—no ghosting, no runaround",
-    emerald: true,
-  },
-];
 
 export default function CTA() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, boolean>>({});
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -35,14 +22,19 @@ export default function CTA() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     const newErrors: Record<string, boolean> = {};
+
     if (!form.name) newErrors.name = true;
     if (!form.email) newErrors.email = true;
+
     if (Object.keys(newErrors).length) {
       setErrors(newErrors);
       return;
     }
+
     setLoading(true);
+
     setTimeout(() => {
       setLoading(false);
       setSent(true);
@@ -53,148 +45,192 @@ export default function CTA() {
     <section
       id="contact"
       ref={ref}
-      className="relative px-[5%] py-32 bg-[#010d14] overflow-hidden"
+      className="relative overflow-hidden bg-background px-[5%] py-24 sm:py-32"
     >
-      <div className="absolute -top-48 -left-48 w-175 h-175 rounded-full bg-cyan-600/10 blur-[160px] pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 w-100 h-100 rounded-full bg-emerald-500/7 blur-[140px] pointer-events-none" />
+      {/* BACKGROUND GLOWS */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-48 -left-48 h-[28rem] w-[28rem] rounded-full bg-cyan-500/10 blur-[160px] dark:bg-cyan-500/20" />
 
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-        {/* Left */}
+        <div className="absolute -bottom-24 -right-24 h-[20rem] w-[20rem] rounded-full bg-emerald-500/10 blur-[140px] dark:bg-emerald-500/20" />
+      </div>
+
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-20">
+        {/* LEFT */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center gap-2 text-[14px] font-bold tracking-[0.25em] uppercase text-cyan-400 mb-5">
-            {/* <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" /> */}
+          <div className="mb-5 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.22em] text-primary">
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
             Ready to grow?
           </div>
-          <h2 className="text-[clamp(2rem,3.8vw,3.4rem)]  text-slate-100 leading-[1.08] tracking-tight mb-5">
-            Let's build something
+
+          <h2 className="mb-5 text-[clamp(2.2rem,4vw,3.8rem)] leading-[1.05] text-foreground">
+            Let&apos;s build something
             <br />
-            <span className="text-cyan-400">the world</span> can be
+            <span className="text-primary">
+              the world
+            </span>{" "}
+            can be
             <br />
             proud of
           </h2>
-          <p className=" text-md md:text-xl text-white/70 leading-[1.8] font-light mb-10 max-w-md">
+
+          <p className="mb-10 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Your purpose-driven brand deserves a partner who understands that
-            growth and impact aren't opposites they're the same thing.
+            growth and impact aren&apos;t opposites — they work together.
           </p>
+
+          {/* PROOF POINTS */}
           <div className="flex flex-col gap-4">
             {[
-              "100% purpose-driven portfolio we only work with brands we believe in",
-              "Strategy, design & tech under one roof no juggling agencies",
-              "We respond within 24 hours no ghosting, no runaround",
+              "100% purpose-driven portfolio — we only work with brands we believe in",
+              "Strategy, design & tech under one roof",
+              "We respond within 24 hours — no ghosting",
             ].map((text, i) => (
-              <div key={i} className="flex items-center gap-3">
-                {/* ICON */}
-                <div className="w-9 h-9 rounded-xl shrink-0 flex items-center justify-center bg-cyan-500/10 border border-cyan-500/20">
+              <div key={i} className="flex items-start gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-primary">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#22d3ee"
+                    stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-4 h-4"
+                    className="h-4 w-4"
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
 
-                {/* TEXT */}
-                <p className="text-md text-white/70 font-light leading-snug">
+                <p className="pt-1 text-sm leading-relaxed text-muted-foreground sm:text-base">
                   {text}
                 </p>
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-4 mt-10">
+
+          {/* LINKS */}
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href="mailto:hello@badili.africa"
-              className="text-[0.82rem] text-cyan-400/60 font-semibold border-b border-cyan-400/20 pb-0.5 hover:text-cyan-400 transition-colors"
+              className="border-b border-cyan-500/20 pb-0.5 text-sm font-medium text-cyan-600 transition-colors hover:text-cyan-500 dark:text-cyan-400"
             >
               hello@badili.africa
             </a>
-            <span className="text-cyan-100/15">·</span>
+
+            <span className="text-border">•</span>
+
             <a
               href="#services"
-              className="text-[0.82rem] text-cyan-400/60 font-semibold border-b border-cyan-400/20 pb-0.5 hover:text-cyan-400 transition-colors"
+              className="border-b border-cyan-500/20 pb-0.5 text-sm font-medium text-cyan-600 transition-colors hover:text-cyan-500 dark:text-cyan-400"
             >
               View our services
             </a>
           </div>
         </motion.div>
 
-        {/* Form */}
+        {/* FORM */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          <div className="relative rounded-2xl p-10 bg-white/2 border border-cyan-500/12 overflow-hidden">
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_100%_100%,rgba(6,182,212,0.07),transparent_70%)] pointer-events-none" />
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
+            <div className="pointer-events-none absolute bottom-0 right-0 h-40 w-40 bg-[radial-gradient(circle_at_100%_100%,rgba(6,182,212,0.08),transparent_70%)] dark:bg-[radial-gradient(circle_at_100%_100%,rgba(6,182,212,0.14),transparent_70%)]" />
 
             {!sent ? (
               <>
                 <div className="mb-7">
-                  <h3 className="text-[1.2rem] font-black text-cyan-100/85 mb-1.5 tracking-tight">
+                  <h3 className="mb-2 text-2xl text-card-foreground">
                     Start the conversation
                   </h3>
-                  <p className="text-[1rem] text-white/70 font-light">
-                    Tell us about your brand and what you're trying to build
+
+                  <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    Tell us about your brand and what you&apos;re trying to
+                    build.
                   </p>
                 </div>
+
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-2 gap-3">
+                  {/* NAME + EMAIL */}
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {["name", "email"].map((field) => (
-                      <div key={field} className="flex flex-col gap-1.5">
-                        <label className="text-[10px] font-bold tracking-[0.15em] uppercase text-cyan-400/70">
+                      <div key={field} className="flex flex-col gap-2">
+                        <label className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                           {field === "name" ? "Your name" : "Email"}
                         </label>
+
                         <input
                           type={field === "email" ? "email" : "text"}
                           placeholder={
-                            field === "name" ? "Amara Osei" : "you@brand.com"
+                            field === "name"
+                              ? "Amara Osei"
+                              : "you@brand.com"
                           }
                           value={form[field as keyof typeof form]}
                           onChange={(e) => {
-                            setForm({ ...form, [field]: e.target.value });
-                            setErrors({ ...errors, [field]: false });
+                            setForm({
+                              ...form,
+                              [field]: e.target.value,
+                            });
+
+                            setErrors({
+                              ...errors,
+                              [field]: false,
+                            });
                           }}
-                          className={`bg-white/3 border rounded-xl px-3.5 py-2.5 text-cyan-100/80 text-[0.875rem] font-light placeholder:text-cyan-100/18 outline-none transition-colors ${errors[field] ? "border-red-500/50" : "border-cyan-500/12 focus:border-cyan-500/38 focus:bg-cyan-500/4"}`}
+                          className={`rounded-xl border bg-background px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/60 focus:ring-2 focus:ring-cyan-500/20 ${
+                            errors[field]
+                              ? "border-red-500"
+                              : "border-border focus:border-cyan-500"
+                          }`}
                         />
                       </div>
                     ))}
                   </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[10px] font-bold tracking-[0.15em] uppercase text-cyan-400/50">
+
+                  {/* BRAND */}
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                       Brand / Company
                     </label>
+
                     <input
                       type="text"
                       placeholder="Your brand name"
                       value={form.brand}
                       onChange={(e) =>
-                        setForm({ ...form, brand: e.target.value })
+                        setForm({
+                          ...form,
+                          brand: e.target.value,
+                        })
                       }
-                      className="bg-white/3 border border-cyan-500/12 focus:border-cyan-500/38 focus:bg-cyan-500/4 rounded-xl px-3.5 py-2.5 text-cyan-100/80 text-[0.875rem] font-light placeholder:text-cyan-100/18 outline-none transition-colors"
+                      className="rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/60 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20"
                     />
                   </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[10px] font-bold tracking-[0.15em] uppercase text-cyan-400/50">
+
+                  {/* SERVICE */}
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                       What do you need help with?
                     </label>
+
                     <select
                       value={form.service}
                       onChange={(e) =>
-                        setForm({ ...form, service: e.target.value })
+                        setForm({
+                          ...form,
+                          service: e.target.value,
+                        })
                       }
-                      className="bg-[#0d1b2a] border border-cyan-500/12 focus:border-cyan-500/38 rounded-xl px-3.5 py-2.5 text-cyan-100/70 text-[0.875rem] font-light outline-none transition-colors"
+                      className="rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-all focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20"
                     >
                       <option value="" disabled>
                         Select a service
                       </option>
+
                       {[
                         "Digital Marketing (Badili Grow)",
                         "Branding & Design (Badili Studio)",
@@ -207,60 +243,65 @@ export default function CTA() {
                       ))}
                     </select>
                   </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[10px] font-bold tracking-[0.15em] uppercase text-cyan-400/50">
+
+                  {/* MESSAGE */}
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                       Tell us more
                     </label>
+
                     <textarea
-                      rows={3}
+                      rows={4}
                       placeholder="What's your biggest challenge right now?"
                       value={form.message}
                       onChange={(e) =>
-                        setForm({ ...form, message: e.target.value })
+                        setForm({
+                          ...form,
+                          message: e.target.value,
+                        })
                       }
-                      className="bg-white/3 border border-cyan-500/12 focus:border-cyan-500/38 focus:bg-cyan-500/4 rounded-xl px-3.5 py-2.5 text-cyan-100/80 text-[0.875rem] font-light placeholder:text-cyan-100/18 outline-none resize-none transition-colors"
+                      className="resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/60 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20"
                     />
                   </div>
+
+                  {/* BUTTON */}
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-3.5 bg-cyan-700 hover:bg-cyan-600 disabled:opacity-60 text-white text-[0.9rem] font-black tracking-wide rounded-xl flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5"
+                    className="flex w-full items-center justify-center rounded-xl bg-cyan-600 px-5 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-cyan-500 disabled:opacity-60"
                   >
-                    {loading ? (
-                      "Sending..."
-                    ) : (
-                      <>
-                        Send message 
-                      </>
-                    )}
+                    {loading ? "Sending..." : "Send message"}
                   </button>
-                  <p className="text-center text-[0.85rem] text-white/65 font-light">
+
+                  <p className="text-center text-sm text-muted-foreground">
                     No commitment required. We reply within 24 hours.
                   </p>
                 </form>
               </>
             ) : (
-              <div className="text-center py-8">
-                <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center mx-auto mb-5">
+              <div className="py-10 text-center">
+                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#34d399"
+                    stroke="currentColor"
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-6 h-6"
+                    className="h-6 w-6"
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="text-[1.1rem] font-black text-cyan-100/85 mb-2">
+
+                <h3 className="mb-2 text-2xl text-foreground">
                   Message sent!
                 </h3>
-                <p className="text-[0.875rem] text-cyan-100/35 font-light leading-relaxed">
-                  We'll be in touch within 24 hours.
+
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  We&apos;ll be in touch within 24 hours.
                   <br />
-                  Check your inbox for a confirmation.
+                  Check your inbox for confirmation.
                 </p>
               </div>
             )}
