@@ -231,13 +231,13 @@ export default function ProcessSection() {
             
             
             
-            <span className="text-cyan-400">
-              Design. Deploy. Grow.
+            <span className="text-primary">
+              Design, Deploy. Grow.
             </span>
           </h2>
         </FadeUp>
         <FadeUp delay={0.1}>
-          <p className="md:max-w-sm text-base md:text-lg leading-relaxed md:text-right mb-14">
+          <p className="md:max-w-sm text-slate-600 dark:text-white/60 md:text-lg leading-relaxed md:text-right font-light  mb-14">
             A strategic workflow designed to help sustainable and impact-driven
             organisations strengthen visibility, build scalable systems, and
             create measurable growth.

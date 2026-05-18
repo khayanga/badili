@@ -165,7 +165,9 @@ export default function CaseStudies() {
           </div>
         </FadeUp>
 
-        <FadeUp delay={0.05}>
+
+        <div className=" p-4 flex flex-col justify-between md:flex-row md:items-center gap-5 mb-12">
+                  <FadeUp delay={0.05}>
           <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-black leading-[1.05] tracking-tight text-slate-900 dark:text-white mb-5">
             Real brands.
             <br />
@@ -174,14 +176,18 @@ export default function CaseStudies() {
             </span>
           </h2>
         </FadeUp>
-
-        <FadeUp delay={0.1}>
-          <p className="max-w-2xl text-lg text-slate-600 dark:text-white/60 leading-relaxed font-light mb-14">
+                <FadeUp delay={0.1}>
+          <p className="max-w-md text-lg text-slate-600 dark:text-white/60 leading-relaxed font-light  md:text-right mb-14">
             From agriculture and sustainability to logistics and technology —
             we help purpose-driven brands communicate clearly, scale visibility,
             and build stronger digital experiences.
           </p>
         </FadeUp>
+                </div>
+
+        
+
+        
 
         {/* Stats */}
         <FadeUp delay={0.12}>

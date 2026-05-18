@@ -95,14 +95,14 @@ export default function Services() {
 
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* HEADER */}
-        <div className="mb-20 flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
+        <div className=" p-4 flex flex-col justify-between md:flex-row md:items-center gap-5 mb-12">
           <div>
             <p className="mb-5 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.22em] text-primary">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               What we do
             </p>
 
-            <h2 className="max-w-2xl text-[clamp(2.2rem,4vw,3.6rem)] leading-[1.05] text-foreground">
+            <h2 className="max-w-xl text-[clamp(2.2rem,4vw,3.6rem)] leading-[1.05] text-foreground">
               Three focused services
               <br />
               built for{" "}
@@ -112,7 +112,7 @@ export default function Services() {
             </h2>
           </div>
 
-          <p className="max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="max-w-sm text-base leading-relaxed text-slate-600 dark:text-white/60 md:text-right sm:text-lg">
             Strategy, design, and digital execution unified into one ecosystem
             built for purpose-driven businesses.
           </p>
