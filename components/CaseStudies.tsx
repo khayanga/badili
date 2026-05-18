@@ -1,11 +1,5 @@
-import FadeUp from "./FadeUp"
+import FadeUp from "./FadeUp";
 
-const stats = [
-  { num: "8+", label: "Brands Built" },
-  { num: "4+", label: "Industries" },
-  { num: "100%", label: "Purpose-Driven" },
-  { num: "1", label: "Planet to Protect" },
-];
 
 const cases = [
   {
@@ -142,9 +136,7 @@ function Logo({
   );
 }
 
-// ─────────────────────────────────────────────────────────
-// Main Component
-// ─────────────────────────────────────────────────────────
+
 
 export default function CaseStudies() {
   return (
@@ -165,49 +157,22 @@ export default function CaseStudies() {
           </div>
         </FadeUp>
 
-
         <div className=" p-4 flex flex-col justify-between md:flex-row md:items-center gap-5 mb-12">
-                  <FadeUp delay={0.05}>
-          <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-black leading-[1.05] tracking-tight text-slate-900 dark:text-white mb-5">
-            Real brands.
-            <br />
-            <span className="text-primary">
-              Real impact.
-            </span>
-          </h2>
-        </FadeUp>
-                <FadeUp delay={0.1}>
-          <p className="max-w-md text-lg text-slate-600 dark:text-white/60 leading-relaxed font-light  md:text-right mb-14">
-            From agriculture and sustainability to logistics and technology —
-            we help purpose-driven brands communicate clearly, scale visibility,
-            and build stronger digital experiences.
-          </p>
-        </FadeUp>
-                </div>
-
-        
-
-        
-
-        {/* Stats */}
-        <FadeUp delay={0.12}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            {stats.map((s) => (
-              <div
-                key={s.label}
-                className="rounded-2xl border border-slate-200 dark:border-cyan-500/10 bg-slate-50 dark:bg-white/[0.03] backdrop-blur-sm p-5 transition-all duration-300 hover:border-cyan-500/20"
-              >
-                <p className="text-4xl font-black text-primary mb-1">
-                  {s.num}
-                </p>
-
-                <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500 dark:text-white/45">
-                  {s.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </FadeUp>
+          <FadeUp delay={0.05}>
+            <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-black leading-[1.05] tracking-tight text-slate-900 dark:text-white mb-5">
+              Real brands.
+              <br />
+              <span className="text-primary">Real impact.</span>
+            </h2>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <p className="max-w-md text-lg text-slate-600 dark:text-white/60 leading-relaxed font-light  md:text-right mb-14">
+              From agriculture and sustainability to logistics and technology —
+              we help purpose-driven brands communicate clearly, scale
+              visibility, and build stronger digital experiences.
+            </p>
+          </FadeUp>
+        </div>
 
         {/* Case Study Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 items-stretch">
@@ -216,11 +181,7 @@ export default function CaseStudies() {
               <div className="group h-full min-h-[420px] rounded-3xl border border-slate-200 dark:border-cyan-500/10 bg-white dark:bg-white/[0.03] backdrop-blur-sm p-6 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-500/30 flex flex-col">
                 {/* Top */}
                 <div className="flex items-start justify-between mb-6">
-                  <Logo
-                    initials={c.initials}
-                    gradient={c.gradient}
-                    size="md"
-                  />
+                  <Logo initials={c.initials} gradient={c.gradient} size="md" />
 
                   <div className="w-8 h-8 rounded-full border border-slate-200 dark:border-cyan-500/10 bg-slate-100 dark:bg-cyan-500/5 flex items-center justify-center text-cyan-600 dark:text-cyan-300 text-xs group-hover:translate-x-0.5 transition-transform">
                     →

@@ -219,7 +219,7 @@ export default function ProcessSection() {
         {/* header */}
         <FadeUp>
           <div className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.24em] font-bold text-[var(--accent)] mb-4">
-            <span className="w-8 h-px bg-[var(--accent)]/50" />
+            <span className="w-8 h-px text-primary" />
             Our Process
           </div>
         </FadeUp>
