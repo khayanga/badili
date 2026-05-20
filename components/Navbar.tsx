@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-[5%]">
 
         {/* Logo */}
-        <Link href="/"  target="_blank" rel="noopener noreferrer">
+        <Link href="/" >
           <Image src="/1.png" alt=" Logo" width={50} height={50} loading="eager"
           className="inline-block mr-2 width:auto height:auto " />
            

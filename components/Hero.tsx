@@ -173,13 +173,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ───────────────── RIGHT ───────────────── */}
+          
           <div
           
             className="relative flex min-h-130 items-center justify-center rounded-4xl border border-border bg-card"
           >
             {/* grid overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:70px_70px] opacity-[0.03]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)]  opacity-[0.03]" />
 
             {/* rings */}
             {[220, 340, 460].map((size, i) => (
