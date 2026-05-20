@@ -4,13 +4,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import Image from "next/image";
 
 const navLinks = [
-  { name: "Services", href: "#services" },
-  { name: "Work", href: "#work" },
-  { name: "About", href: "#about" },
-  { name: "Values", href: "#values" },
-  { name: "Team", href: "#team" },
+  { name: "Services", href: "/#services" },
+  { name: "Work", href: "/#work" },
+  { name: "About", href: "/#about" },
+  { name: "Team", href: "/team" },
+  
 ];
 
 export default function Navbar() {
@@ -21,11 +22,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-[5%]">
 
         {/* Logo */}
-        <Link
-          href="/"
-          className="font-bold text-2xl tracking-tight text-slate-900 dark:text-white"
-        >
-          Badi<span className="text-cyan-500">li</span>
+        <Link href="/"  target="_blank" rel="noopener noreferrer">
+          <Image src="/1.png" alt=" Logo" width={50} height={50} loading="eager"
+          className="inline-block mr-2 width:auto height:auto " />
+           
         </Link>
 
         {/* Desktop Nav */}

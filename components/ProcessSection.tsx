@@ -78,9 +78,6 @@ const steps = [
   },
 ];
 
-// ─────────────────────────────────────────────────────────
-// Card
-// ─────────────────────────────────────────────────────────
 
 function ProcessCard({
   step,
@@ -103,7 +100,7 @@ function ProcessCard({
     >
       {/* connector line */}
       <div
-        className="hidden lg:block absolute top-1/2 border-dashed border-[var(--border)]"
+        className="hidden lg:block absolute top-1/2 border-dashed border-border"
         style={{
           width: "70px",
           borderTopWidth: "1px",
@@ -125,7 +122,7 @@ function ProcessCard({
         }}
       >
         {/* subtle glow */}
-        <div className="absolute inset-0 bg-cyan-500/[0.03]" />
+        <div className="absolute inset-0 bg-cyan-500/3" />
 
         <div className="relative z-10 p-5">
           {/* top */}
@@ -137,7 +134,7 @@ function ProcessCard({
                 ${
                   active
                     ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/20"
-                    : "bg-[var(--surface2)] text-[var(--accent)] border border-[var(--border)]"
+                    : "bg-surface2 text-accent border border-border"
                 }`}
               >
                 <Icon size={20} />
@@ -145,7 +142,7 @@ function ProcessCard({
 
               {/* phase */}
               <div>
-                <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--accent)] mb-1">
+                <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--accent)]vm mb-1">
                   {step.phase}
                 </p>
 
@@ -168,7 +165,7 @@ function ProcessCard({
               ${
                 active
                   ? "bg-cyan-500 text-white"
-                  : "bg-[var(--surface2)] text-[var(--text3)] border border-[var(--border)]"
+                  : "bg-surface2 text-text3 border border-border"
               }`}
             >
               <ArrowRight size={15} />
@@ -176,12 +173,12 @@ function ProcessCard({
           </div>
 
           {/* title */}
-          <h3 className="text-[1.15rem] font-bold leading-tight text-[var(--text)] mb-3">
+          <h3 className="text-[1.15rem] font-bold leading-tight text-text mb-3">
             {step.title}
           </h3>
 
           {/* desc */}
-          <p className="text-sm leading-relaxed text-[var(--text2)]">
+          <p className="text-sm leading-relaxed text-text2">
             {step.desc}
           </p>
         </div>
@@ -190,9 +187,6 @@ function ProcessCard({
   );
 }
 
-// ─────────────────────────────────────────────────────────
-// Main
-// ─────────────────────────────────────────────────────────
 
 export default function ProcessSection() {
   const [activeId, setActiveId] = useState(1);
@@ -209,25 +203,26 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      className="relative overflow-hidden py-24 px-[5%] bg-[var(--background)]"
+      className="relative overflow-hidden py-24 px-[5%] bg-background"
     >
       {/* ambient glow */}
-      <div className="absolute top-0 left-1/4 w-[400px] h-[400px] rounded-full bg-cyan-500/10 blur-[120px]" />
-      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-cyan-500/10 blur-[120px]" />
+      <div className="absolute top-0 left-1/4 w-100 h-100 rounded-full bg-cyan-500/10 blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-87.5 h-87.5 rounded-full bg-cyan-500/10 blur-[120px]" />
 
       <div className="relative z-10 max-w-6xl mx-auto ">
         {/* header */}
         <FadeUp>
-          <div className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.24em] font-bold text-[var(--accent)] mb-4">
-            <span className="w-8 h-px text-primary" />
+          <div className="mb-6 inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.25em] text-primary">
+            <span className="h-px w-8 bg-primary/40" />
             Our Process
           </div>
+
         </FadeUp>
 
 
         <div className=" p-4 flex flex-col justify-between md:flex-row md:items-center gap-5 mb-12">
           <FadeUp delay={0.05}>
-          <h2 className="text-[clamp(2.5rem,5vw,4.5rem)]  md:max-w-md font-black leading-[1] tracking-tight text-[var(--text)] mb-5">
+          <h2 className="text-[clamp(2.5rem,5vw,4.5rem)]  md:max-w-md font-black leading-none tracking-tight text-text mb-5">
             
             
             
@@ -253,7 +248,7 @@ export default function ProcessSection() {
         {/* timeline */}
         <div className="relative">
           {/* center line */}
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-[var(--border)] -translate-x-1/2" />
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
 
           <div className="space-y-5">
             {steps.map((step, index) => (
@@ -278,11 +273,11 @@ export default function ProcessSection() {
                   {/* center node */}
                   <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                     <div
-                      className={`w-4 h-4 rounded-full border-4 border-[var(--background)] transition-all duration-300
+                      className={`w-4 h-4 rounded-full border-4 border-background transition-all duration-300
                       ${
                         activeId === step.id
                           ? "bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.7)]"
-                          : "bg-[var(--surface2)]"
+                          : "bg-surface2"
                       }`}
                     />
                   </div>

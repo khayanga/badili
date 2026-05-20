@@ -100,13 +100,11 @@ const cases = [
   },
 ];
 
-// ─────────────────────────────────────────────────────────
-// Components
-// ─────────────────────────────────────────────────────────
+
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-[0.14em] font-semibold bg-cyan-500/10 dark:bg-cyan-500/10 bg-cyan-500/8 border border-cyan-500/15 text-cyan-700 dark:text-cyan-300 transition-colors">
+    <span className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-[0.14em] font-semibold bg-cyan-500/8 dark:bg-cyan-500/10 border border-cyan-500/15 text-cyan-700 dark:text-cyan-300 transition-colors">
       {children}
     </span>
   );
@@ -141,20 +139,21 @@ function Logo({
 export default function CaseStudies() {
   return (
     <section
-      id="work"
+      id="cases"
       className="relative py-32 px-[5%] overflow-hidden bg-white dark:bg-[#030b11] transition-colors duration-500"
     >
       {/* Background Glow */}
-      <div className="absolute top-0 left-1/3 w-[500px] h-[500px] rounded-full bg-cyan-500/5 blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-emerald-500/5 blur-[160px] pointer-events-none" />
+      <div className="absolute top-0 left-1/3 w-125 h-125 rounded-full bg-cyan-500/5 blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-125 h-125 rounded-full bg-emerald-500/5 blur-[160px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <FadeUp>
-          <div className="inline-flex items-center gap-3 text-[12px] font-bold tracking-[0.24em] uppercase text-primary mb-5">
-            <span className="w-8 h-px bg-cyan-500/60" />
-            Selected Work
+          <div className="mb-6 inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.25em] text-primary">
+            <span className="h-px w-8 bg-primary/40" />
+            Selected Case Studies
           </div>
+
         </FadeUp>
 
         <div className=" p-4 flex flex-col justify-between md:flex-row md:items-center gap-5 mb-12">
@@ -178,7 +177,7 @@ export default function CaseStudies() {
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 items-stretch">
           {cases.map((c, i) => (
             <FadeUp key={c.id} delay={0.18 + i * 0.04}>
-              <div className="group h-full min-h-[420px] rounded-3xl border border-slate-200 dark:border-cyan-500/10 bg-white dark:bg-white/[0.03] backdrop-blur-sm p-6 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-500/30 flex flex-col">
+              <div className="group h-full min-h-105 rounded-3xl border border-slate-200 dark:border-cyan-500/10 bg-white dark:bg-white/3 backdrop-blur-sm p-6 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-500/30 flex flex-col">
                 {/* Top */}
                 <div className="flex items-start justify-between mb-6">
                   <Logo initials={c.initials} gradient={c.gradient} size="md" />
@@ -196,7 +195,7 @@ export default function CaseStudies() {
                       {c.industry}
                     </p>
 
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug mb-1 min-h-[56px]">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug mb-1 min-h-14">
                       {c.brand}
                     </h3>
 
@@ -206,7 +205,7 @@ export default function CaseStudies() {
                   </div>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5 mb-5 min-h-[58px] content-start">
+                  <div className="flex flex-wrap gap-1.5 mb-5 min-h-14.5 content-start">
                     {c.services.map((s) => (
                       <Tag key={s}>{s}</Tag>
                     ))}

@@ -47,7 +47,7 @@ const orbitIcons = [
 const stats = [
   {
     label: "Brands grown",
-    value: "8+",
+    value: "10+",
     sub: "across East Africa",
     pos: "top-[8%] left-[4%]",
   },
@@ -71,9 +71,7 @@ const stats = [
   },
 ];
 
-// ─────────────────────────────────────────────────────────
-// Animations
-// ─────────────────────────────────────────────────────────
+
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -85,15 +83,12 @@ const fadeUp = (delay = 0) => ({
   },
 });
 
-// ─────────────────────────────────────────────────────────
-// Component
-// ─────────────────────────────────────────────────────────
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-background pt-28 pb-20 lg:pt-42 lg:pb-28">
       {/* ambient glow */}
-      <div className="pointer-events-none absolute top-[-120px] left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
+      <div className="pointer-events-none absolute top--30 left-1/2 h-125 w-125 -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-2">
@@ -134,10 +129,10 @@ export default function Hero() {
               className="mt-10 flex flex-wrap gap-4"
             >
               <a
-                href="#work"
+                href="#cases"
                 className="inline-flex items-center justify-center rounded-2xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:scale-[1.02] hover:opacity-90"
               >
-                See our work →
+                See our work 
               </a>
 
               <a
@@ -181,7 +176,7 @@ export default function Hero() {
           {/* ───────────────── RIGHT ───────────────── */}
           <div
           
-            className="relative flex min-h-[520px] items-center justify-center rounded-[2rem] border border-border bg-card"
+            className="relative flex min-h-130 items-center justify-center rounded-4xl border border-border bg-card"
           >
             {/* grid overlay */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:70px_70px] opacity-[0.03]" />
@@ -211,13 +206,11 @@ export default function Hero() {
               className="relative z-10 flex h-28 w-28 items-center justify-center rounded-full border border-primary/20 bg-primary shadow-[0_0_60px_hsl(var(--primary)/0.25)]"
             >
               <div className="text-center">
-                <span className="block text-[10px] uppercase tracking-[0.18em] text-primary-foreground/60">
-                  Badili
+                <span className="block text-[13px] uppercase tracking-[0.18em] text-primary-foreground/70">
+                  Badiili
                 </span>
 
-                <span className=" text-lg font-bold text-primary-foreground">
-                  Agency
-                </span>
+                
               </div>
             </motion.div>
 

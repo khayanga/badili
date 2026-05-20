@@ -14,17 +14,17 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="bg-[#020c1b] text-[#e8f4ff] overflow-x-hidden">
+    <main className=" overflow-x-hidden">
       <Navbar/>
       <Hero/>
       <Ticker/>
-      {/* <ValuesStrip/> */}
+      
       <Services/>
       <About/>
-      <CoreValues/>
+      
       <ProcessSection/>
       <CaseStudies/>
-      {/* <Team/> */}
+      
       <CTA/>
 
       <Footer/>

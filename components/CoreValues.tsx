@@ -52,9 +52,9 @@ export default function CoreValues() {
     >
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[-10%] top-[-10%] h-[500px] w-[500px] rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute right-[-10%] top-[-10%] h-125 w-125 rounded-full bg-primary/10 blur-3xl" />
 
-        <div className="absolute bottom-[-10%] left-[5%] h-[350px] w-[350px] rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute bottom-[-10%] left-[5%] h-87.5 w-87.5 rounded-full bg-primary/5 blur-3xl" />
       </div>
 
       {/* Header */}
@@ -79,7 +79,7 @@ export default function CoreValues() {
         </h2>
 
         <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Not buzzwords — just genuine beliefs that shape every decision,
+          Not buzzwords  just genuine beliefs that shape every decision,
           project, and partnership.
         </p>
       </motion.div>
@@ -99,7 +99,7 @@ export default function CoreValues() {
               className="group relative border-border p-7 transition-all duration-300 hover:bg-primary/5 sm:p-9"
             >
               {/* Borders */}
-              <div className="absolute inset-y-0 left-0 w-[2px] origin-top scale-y-0 bg-primary transition-transform duration-300 group-hover:scale-y-100" />
+              <div className="absolute inset-y-0 left-0 w-0.5 origin-top scale-y-0 bg-primary transition-transform duration-300 group-hover:scale-y-100" />
 
               {/* Horizontal borders */}
               <div className="absolute bottom-0 left-0 h-px w-full bg-border" />
@@ -133,7 +133,7 @@ export default function CoreValues() {
             }}
             className="group relative sm:col-span-2"
           >
-            <div className="absolute left-0 top-0 h-full w-[2px] origin-top scale-y-0 bg-primary transition-transform duration-300 group-hover:scale-y-100" />
+            <div className="absolute left-0 top-0 h-full w-0.5 origin-top scale-y-0 bg-primary transition-transform duration-300 group-hover:scale-y-100" />
 
             <div className="flex flex-col gap-8 p-7 transition-all duration-300 hover:bg-primary/5 sm:flex-row sm:items-center sm:justify-between sm:p-10">
               <div>
@@ -146,7 +146,7 @@ export default function CoreValues() {
                 </h3>
 
                 <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-                  Collaborative, honest, and real. No jargon, no ego —
+                  Collaborative, honest, and real. No jargon, no ego 
                   just good work and good people who care about what
                   they’re building.
                 </p>
@@ -154,13 +154,13 @@ export default function CoreValues() {
 
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-primary">
-                  ❤️
+                  🩵 
                 </div>
 
                 <div className="text-sm leading-tight text-muted-foreground">
                   The soul
                   <br />
-                  of Badili
+                  of Badiili
                 </div>
               </div>
             </div>

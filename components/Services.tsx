@@ -72,7 +72,7 @@ export default function Services() {
       id="services"
       className="relative overflow-hidden bg-background px-[5%] py-24 sm:py-32"
     >
-      {/* BACKGROUND */}
+      
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
@@ -88,7 +88,7 @@ export default function Services() {
 
       {/* GLOW */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-0 top-0 h-[28rem] w-[28rem] rounded-full bg-primary/10 blur-[140px] dark:bg-primary/20" />
+        <div className="absolute left-0 top-0 h-112 w-md rounded-full bg-primary/10 blur-[140px] dark:bg-primary/20" />
 
         {/* <div className="absolute bottom-0 right-0 h-[22rem] w-[22rem] rounded-full bg-emerald-500/10 blur-[140px] dark:bg-emerald-500/20" /> */}
       </div>
@@ -139,7 +139,7 @@ export default function Services() {
               </p>
 
               {/* Title */}
-              <h3 className="mb-4 text-2xl text-card-foreground">
+              <h3 className="mb-4 text-2xl font-bold  text-card-foreground">
                 {service.name}
               </h3>
 
@@ -148,28 +148,8 @@ export default function Services() {
                 {service.desc}
               </p>
 
-              {/* Arrow */}
-              <div className="mt-10 flex items-center gap-2 text-sm font-medium text-cyan-600 opacity-0 transition-all duration-500 group-hover:translate-x-1 group-hover:opacity-100 dark:text-cyan-400">
-                Learn more
-                <svg
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </div>
-
-              {/* Huge background word */}
-              <div className="pointer-events-none absolute bottom-[-18px] right-[-10px] select-none text-6xl font-heading text-foreground/[0.03] transition-all duration-500 group-hover:text-cyan-500/[0.05] dark:text-white/[0.03]">
-                {service.name.split(" ")[1]?.toUpperCase()}
-              </div>
+              
+              
             </div>
           ))}
         </div>

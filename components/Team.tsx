@@ -1,80 +1,127 @@
+"use client";
+
+import Image from "next/image";
 import FadeUp from "./FadeUp";
-
-
-const team = [
-  { initials: "AK", name: "Amani Kariuki", role: "Founder & Strategist" },
-  { initials: "ZM", name: "Zara Mwangi", role: "Creative Director" },
-  { initials: "TO", name: "Tendo Ochieng", role: "Lead Developer" },
-  { initials: "NW", name: "Nia Waweru", role: "Brand & Growth" },
-];
-
-function Avatar({ initials }: { initials: string }) {
-  return (
-    <div className="w-16 h-16 rounded-2xl flex items-center justify-center font-black text-white text-lg bg-gradient-to-br from-cyan-500 to-emerald-500 shadow-lg shadow-cyan-500/10 group-hover:scale-110 transition-transform duration-300">
-      {initials}
-    </div>
-  );
-}
 
 export default function Team() {
   return (
     <section
       id="team"
-      className="relative py-28 px-[5%] bg-white dark:bg-[#030b11] transition-colors duration-500 overflow-hidden"
+      className="relative overflow-hidden px-[5%] py-24 sm:py-32"
     >
-      {/* subtle glow background */}
-      <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-cyan-500/5 blur-[160px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-500/5 blur-[160px] rounded-full pointer-events-none" />
+      {/* ambient glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[10%] top-[10%] h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute bottom-[-10%] right-[5%] h-70 w-70 rounded-full bg-primary/5 blur-3xl" />
+      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Header */}
-        <FadeUp>
-          <div className="inline-flex items-center gap-3 text-[12px] font-bold tracking-[0.24em] uppercase text-cyan-600 dark:text-cyan-400 mb-5">
-            <span className="w-8 h-px bg-cyan-500/60" />
-            The People
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
+        
+        <div>
+          <FadeUp>
+            <div className="mb-6 inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.25em] text-primary">
+            <span className="h-px w-8 bg-primary/40" />
+            Team
+          </div>
+
+          </FadeUp>
+
+          <FadeUp delay={0.05}>
+            <h2 className="max-w-xl font-heading text-[clamp(2.3rem,5vw,4rem)] leading-[1.05] text-foreground">
+              Building brands
+              <br />
+              with strategy,
+              <br />
+              <span className="text-primary">
+                creativity & intelligence.
+              </span>
+            </h2>
+          </FadeUp>
+
+          <FadeUp delay={0.1}>
+            <p className="mt-7 max-w-xl text-base leading-[1.9] text-muted-foreground sm:text-lg">
+              We’re creatives, strategists, and problem-solversbut above
+              all, we’re partners in building brands that matter.
+            </p>
+          </FadeUp>
+
+          <FadeUp delay={0.15}>
+            <p className="mt-5 max-w-xl text-base leading-[1.9] text-muted-foreground sm:text-lg">
+              Our core strategy is driven by AI, data-driven marketing,
+              trend intelligence, and the acquisition of top talent to
+              deliver innovative, scalable, and growth-focused solutions
+              for purpose-driven organisations.
+            </p>
+          </FadeUp>
+
+          {/* feature pills */}
+          <FadeUp delay={0.2}>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {[
+                "🔵 AI Strategy",
+                "📊 Data-driven Marketing",
+                "📈 Trend Intelligence",
+                "💡 Creative Innovation",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-full border border-border bg-card px-4 py-2 text-sm text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:bg-primary/5 hover:text-foreground"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </FadeUp>
+        </div>
+
+        {/* RIGHT IMAGE CARD */}
+        <FadeUp delay={0.15}>
+          <div className="relative">
+            {/* ambient glow */}
+            <div className="absolute inset-0 rounded-4xl bg-primary/10 blur-2xl" />
+
+            <div className="group relative overflow-hidden rounded-4xl bg-card shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(8,145,178,0.12)]">
+              
+              {/* image */}
+              <div className="relative h-130 w-full overflow-hidden">
+                <Image
+                  src="/derrick.jpg"
+                  alt="Managing Director"
+                  fill
+                  priority
+                  quality={90}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center scale-[1.02] contrast-105 brightness-[1.02] 
+                  transition-transform duration-700 group-hover:scale-105 height-auto width-auto"
+                />
+
+                {/* overlay gradient */}
+                <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
+
+                {/* subtle overlay */}
+                <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
+              </div>
+
+              {/* content overlay */}
+              <div className="absolute bottom-0 left-0 w-full p-8">
+                <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/70 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-primary backdrop-blur-md">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  Managing Director
+                </div>
+
+                <h3 className="mt-4 font-heading text-3xl font-bold text-foreground">
+                  Derrick Mboya
+                </h3>
+
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
+                  Leading the vision behind Badiili with a focus on
+                  innovation, sustainable growth, and building
+                  future-ready brands across Africa.
+                </p>
+              </div>
+            </div>
           </div>
         </FadeUp>
-
-        <FadeUp delay={0.05}>
-          <h2 className="text-[clamp(2.5rem,5vw,3.5rem)] font-black leading-[1.05] tracking-tight text-slate-900 dark:text-white mb-5">
-            Meet the <span className="text-cyan-500 dark:text-cyan-400">Team</span>
-          </h2>
-        </FadeUp>
-
-        <FadeUp delay={0.1}>
-          <p className="max-w-2xl text-lg text-slate-600 dark:text-white/60 leading-relaxed font-light mb-14">
-            Creatives, strategists, and problem-solvers. Above all, partners in
-            building brands that matter.
-          </p>
-        </FadeUp>
-
-        {/* Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-          {team.map((member, i) => (
-            <FadeUp key={member.name} delay={0.1 + i * 0.05}>
-              <div className="group relative rounded-3xl border border-slate-200 dark:border-cyan-500/10 bg-white dark:bg-white/[0.03] backdrop-blur-sm p-6 text-center transition-all duration-500 hover:-translate-y-1 hover:border-cyan-500/30">
-
-                {/* Avatar */}
-                <div className="flex justify-center mb-5">
-                  <Avatar initials={member.initials} />
-                </div>
-
-                {/* Name */}
-                <div className="text-base font-bold text-slate-900 dark:text-white mb-1">
-                  {member.name}
-                </div>
-
-                {/* Role */}
-                <div className="text-xs font-semibold tracking-[0.14em] uppercase text-cyan-600 dark:text-cyan-400">
-                  {member.role}
-                </div>
-
-                {/* subtle hover glow */}
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-cyan-500/5 to-emerald-500/5 pointer-events-none" />
-              </div>
-            </FadeUp>
-          ))}
-        </div>
       </div>
     </section>
   );

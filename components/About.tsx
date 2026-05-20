@@ -25,9 +25,9 @@ export default function About() {
     >
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[-10%] top-[-10%] h-[500px] w-[500px] rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute right-[-10%] top-[-10%] h-125 w-125 rounded-full bg-primary/10 blur-3xl" />
 
-        <div className="absolute bottom-[-10%] left-[10%] h-[350px] w-[350px] rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute bottom-[-10%] left-[10%] h-87.5 w-87.5 rounded-full bg-primary/5 blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24">
@@ -40,7 +40,7 @@ export default function About() {
           {/* Label */}
           <div className="mb-6 inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.25em] text-primary">
             <span className="h-px w-8 bg-primary/40" />
-            About Badili
+            About Badiili
           </div>
 
           {/* Title */}
@@ -91,61 +91,10 @@ export default function About() {
           }}
           className="grid grid-cols-2 gap-4"
         >
-          {/* Main Card */}
-          <div className="col-span-2 rounded-3xl border border-border bg-card p-7 shadow-sm">
-            <div className="flex items-start gap-5">
-              {/* Icon */}
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-primary/15 bg-primary/10 text-primary">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-5 w-5"
-                >
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                </svg>
-              </div>
+          
+         
 
-              {/* Content */}
-              <div className="flex-1">
-                <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/60">
-                  Growth Focus
-                </p>
-
-                <p className="text-4xl font-bold tracking-tight text-foreground">
-                  100%
-                </p>
-
-                <p className="mt-1 text-sm text-muted-foreground sm:text-base">
-                  Purpose-driven client portfolio
-                </p>
-
-                {/* Skills */}
-                <div className="mt-6 space-y-4">
-                  {skills.map((s) => (
-                    <div key={s.label}>
-                      <div className="mb-2 flex items-center justify-between text-sm text-muted-foreground">
-                        <span>{s.label}</span>
-                        <span>{s.pct}%</span>
-                      </div>
-
-                      <div className="h-2 overflow-hidden rounded-full bg-secondary">
-                        <div
-                          className="h-full rounded-full bg-primary transition-all duration-700"
-                          style={{ width: `${s.pct}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Services */}
+          
           <div className="rounded-3xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:bg-primary/5">
             <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/15 bg-primary/10 text-primary">
               <svg
@@ -166,7 +115,7 @@ export default function About() {
             </p>
 
             <p className="text-3xl font-bold tracking-tight text-foreground">
-              5+
+              3+
             </p>
 
             <p className="mt-1 text-sm text-muted-foreground">
@@ -211,7 +160,7 @@ export default function About() {
 
             <div className="rounded-full bg-primary px-5 py-4">
               <p className="font-heading text-lg text-primary-foreground">
-                Badili
+                Badiili
               </p>
             </div>
           </div>
