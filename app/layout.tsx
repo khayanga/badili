@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import TidioChat from "@/components/TidioChat";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={poppins.className}>
         <ThemeProvider>
+          <TidioChat/>
           <GoogleAnalytics/>
           {children}
           </ThemeProvider>
