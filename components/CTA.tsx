@@ -208,7 +208,7 @@ export default function CTA() {
           <p className="mb-10 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Your purpose-driven brand deserves a
             partner who understands that growth and
-            impact aren&apos;t opposites — they work
+            impact aren&apos;t opposites they work
             together.
           </p>
 
@@ -247,10 +247,10 @@ export default function CTA() {
           {/* LINKS */}
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="mailto:badiili@gmail.com"
+              href="mailto:badiili.arbarne@gmail.com"
               className="border-b border-cyan-500/20 pb-0.5 text-sm font-medium text-cyan-600 transition-colors hover:text-cyan-500 dark:text-cyan-400"
             >
-              badiili@gmail.com
+              badiili.arbarne@gmail.com
             </a>
 
             <span className="text-border">•</span>
@@ -414,7 +414,6 @@ export default function CTA() {
                       {[
                         "Digital Marketing (Badili Grow)",
                         "Branding & Design (Badili Studio)",
-                        "Print & Collateral (Badili Print)",
                         "Web Design & Development (Badili Build)",
                         "Consulting & Training (Badili Consult)",
                         "Not sure yet — I need guidance",

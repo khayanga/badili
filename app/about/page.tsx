@@ -1,4 +1,5 @@
 
+import About from '@/components/About'
 import CoreValues from '@/components/CoreValues'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
@@ -9,6 +10,7 @@ const page = () => {
   return (
     <main>
         <Navbar/>
+        <About/>
         <CoreValues/>
         <Team/>
         <Footer/>

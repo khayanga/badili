@@ -64,6 +64,35 @@ const services = [
       </svg>
     ),
   },
+ {
+  name: "Badiili AI",
+  sub: "AI Automation & Growth",
+  desc: "We help sustainable businesses build stronger brands, smarter systems, and better digital visibility through AI-first solutions.",
+  icon: (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-6 w-6"
+    >
+      {/* brain/core */}
+      <path d="M12 3a3 3 0 0 0-3 3v1H8a3 3 0 0 0-3 3 3 3 0 0 0 2 2.83V14a3 3 0 0 0 3 3h1v1a3 3 0 0 0 6 0v-1h1a3 3 0 0 0 3-3v-1.17A3 3 0 0 0 23 10a3 3 0 0 0-3-3h-1V6a3 3 0 0 0-3-3" />
+
+      {/* nodes */}
+      <circle cx="9" cy="10" r="1" />
+      <circle cx="15" cy="10" r="1" />
+      <circle cx="12" cy="15" r="1" />
+
+      {/* connections */}
+      <path d="M10 10h4" />
+      <path d="M9.7 10.7l1.6 3" />
+      <path d="M14.3 10.7l-1.6 3" />
+    </svg>
+  ),
+},
 ];
 
 export default function Services() {
@@ -95,31 +124,10 @@ export default function Services() {
 
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* HEADER */}
-        <div className=" p-4 flex flex-col justify-between md:flex-row md:items-center gap-5 mb-12">
-          <div>
-            <p className="mb-5 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.22em] text-primary">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              What we do
-            </p>
-
-            <h2 className="max-w-xl text-[clamp(2.2rem,4vw,3.6rem)] leading-[1.05] text-foreground">
-              Three focused services
-              <br />
-              built for{" "}
-              <span className="text-primary">
-                modern brands
-              </span>
-            </h2>
-          </div>
-
-          <p className="max-w-sm text-base leading-relaxed text-slate-600 dark:text-white/60 md:text-right sm:text-lg">
-            Strategy, design, and digital execution unified into one ecosystem
-            built for purpose-driven businesses.
-          </p>
-        </div>
+       
 
         {/* CARDS */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
           {services.map((service, i) => (
             <div
               key={i}

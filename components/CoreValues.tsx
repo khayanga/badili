@@ -73,7 +73,7 @@ export default function CoreValues() {
         <h2 className="font-heading text-[clamp(2rem,4vw,3.4rem)] leading-tight text-foreground">
           The principles that
           <br />
-          <span className="italic text-primary">
+          <span className=" text-primary">
             drive our work
           </span>
         </h2>

@@ -15,21 +15,14 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className=" overflow-x-hidden">
-      <Navbar/>
-      <Hero/>
-      <Ticker/>
-      
-      <Services/>
-      <About/>
-      
-      <ProcessSection/>
-      <CaseStudies/>
-      
-      <CTA/>
-
-      <Footer/>
-
+      <Navbar />
+      <Hero />
+      <Ticker />
+      <Services />
+      <ProcessSection />
+      <CaseStudies />
+      <CTA />
+      <Footer />
     </main>
-    
   );
 }

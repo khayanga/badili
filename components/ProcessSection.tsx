@@ -227,7 +227,7 @@ export default function ProcessSection() {
             
             
             <span className="text-primary">
-              Design, Deploy. Grow.
+              Discover, Design. Grow.
             </span>
           </h2>
         </FadeUp>

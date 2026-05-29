@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import FadeUp from "./FadeUp";
 
 
@@ -139,7 +140,7 @@ function Logo({
 export default function CaseStudies() {
   return (
     <section
-      id="cases"
+      id="work"
       className="relative py-32 px-[5%] overflow-hidden bg-white dark:bg-[#030b11] transition-colors duration-500"
     >
       {/* Background Glow */}
@@ -166,7 +167,7 @@ export default function CaseStudies() {
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="max-w-md text-lg text-slate-600 dark:text-white/60 leading-relaxed font-light  md:text-right mb-14">
-              From agriculture and sustainability to logistics and technology —
+              From agriculture and sustainability to logistics and technology 
               we help purpose-driven brands communicate clearly, scale
               visibility, and build stronger digital experiences.
             </p>
@@ -183,7 +184,7 @@ export default function CaseStudies() {
                   <Logo initials={c.initials} gradient={c.gradient} size="md" />
 
                   <div className="w-8 h-8 rounded-full border border-slate-200 dark:border-cyan-500/10 bg-slate-100 dark:bg-cyan-500/5 flex items-center justify-center text-cyan-600 dark:text-cyan-300 text-xs group-hover:translate-x-0.5 transition-transform">
-                    →
+                    <ArrowRight size={14} />
                   </div>
                 </div>
 

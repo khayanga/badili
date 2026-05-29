@@ -2,7 +2,7 @@ const items = [
   "Digital Strategy",
   "Brand Identity",
   "Web Development",
-  "Print & Collateral",
+  
   "Growth Consulting",
   "Purpose-Driven Marketing",
 ];

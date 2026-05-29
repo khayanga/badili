@@ -8,13 +8,18 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           <div>
             <div className=" p-2 inline-block ">
-              <Image src="/2.png" alt="Logo" width={100} height={40}  className="width:auto height:auto"/>
+              <Image
+                src="/2.png"
+                alt="Logo"
+                width={100}
+                height={40}
+                className="h-30 w-auto rounded-full"
+              />
             </div>
 
             <p className=" leading-8 text-text2">
-              We grow brands that grow the planet. A
-              digital agency built for purpose-driven
-              businesses.
+              We grow brands that grow the planet. A digital agency built for
+              purpose-driven businesses.
             </p>
           </div>
 
@@ -27,6 +32,7 @@ export default function Footer() {
               <p>Badili Grow</p>
               <p>Badili Studio</p>
               <p>Badili Build</p>
+              <p>Badili AI</p>
             </div>
           </div>
 
@@ -36,17 +42,17 @@ export default function Footer() {
             </h4>
 
             <div className="space-y-3 text-text2">
-              <a href="#about" className="block hover:text-cyan-500 transition">
+              <a href="/about" className="block hover:text-cyan-500 transition">
                 About
               </a>
               <a href="#work" className="block hover:text-cyan-500 transition">
                 Work
               </a>
-              <a href="#values" className="block hover:text-cyan-500 transition">
-                Values
-              </a>
-              <a href="/team" className="block hover:text-cyan-500 transition">
-                Team
+              <a
+                href="#services"
+                className="block hover:text-cyan-500 transition"
+              >
+                Services
               </a>
             </div>
           </div>
@@ -57,7 +63,7 @@ export default function Footer() {
             </h4>
 
             <div className="space-y-3 text-text2">
-              <p>badiili@gmail.com</p>
+              <p>badiili.arbarne@gmail.com</p>
               <p>Nairobi, Kenya</p>
               <p>+254 757 721222</p>
             </div>

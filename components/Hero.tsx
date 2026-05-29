@@ -10,10 +10,6 @@ import {
 } from "lucide-react";
 import Container from "./Container";
 
-// ─────────────────────────────────────────────────────────
-// Data
-// ─────────────────────────────────────────────────────────
-
 const avatars = [
   { initials: "BG" },
   { initials: "FF" },
@@ -166,9 +162,9 @@ export default function Hero() {
 
               <div className="text-sm text-muted-foreground">
                 <span className="font-semibold text-foreground">
-                  8+ brands
+                  8+
                 </span>{" "}
-                transformed across East Africa
+                We transform across East Africa
               </div>
             </div>
           </div>
