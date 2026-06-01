@@ -13,7 +13,7 @@ export default function Footer() {
                 alt="Logo"
                 width={100}
                 height={40}
-                className="h-30 w-auto rounded-full"
+                className="h-20 w-auto rounded-full"
               />
             </div>
 

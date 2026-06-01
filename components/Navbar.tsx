@@ -24,7 +24,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" >
           <Image src="/1.png" alt=" Logo" width={50} height={50} loading="eager"
-          className="inline-block mr-2 width:auto height:auto " />
+          className="inline-block mr-2 width:auto height:auto rounded-full" />
            
         </Link>
 
@@ -45,9 +45,9 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
 
-          <button className="hidden md:inline-flex px-4 py-2 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-cyan-600 transition">
+          <a  href="#contact" className="hidden md:inline-flex px-4 py-2 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-cyan-600 transition">
             Start a Project 
-          </button>
+          </a>
 
           {/* Mobile Menu Button */}
           <button

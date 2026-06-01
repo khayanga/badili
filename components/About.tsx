@@ -253,7 +253,7 @@ export default function About() {
             <div className="my-8 h-px bg-border" />
 
             {/* skills */}
-            <div className="space-y-5">
+            {/* <div className="space-y-5">
               {skills.map((skill) => (
                 <div key={skill.label}>
                   <div className="mb-2 flex items-center justify-between">
@@ -283,7 +283,7 @@ export default function About() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* bottom card */}
             <div className="mt-10 rounded-2xl border border-primary/10 bg-primary/5 p-5">
