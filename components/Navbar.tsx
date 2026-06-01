@@ -73,9 +73,9 @@ export default function Navbar() {
             </a>
           ))}
 
-          <button className="w-full mt-4 px-4 py-3 rounded-xl bg-primary text-white font-semibold">
+          <a  href="#contact" className="w-full mt-4 px-4 py-3 rounded-xl bg-primary text-white font-semibold">
             Start a Project 
-          </button>
+          </a>
         </div>
       )}
     </nav>
