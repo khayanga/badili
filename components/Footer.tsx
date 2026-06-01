@@ -29,10 +29,10 @@ export default function Footer() {
             </h4>
 
             <div className="space-y-3 text-text2">
-              <p>Badili Grow</p>
-              <p>Badili Studio</p>
-              <p>Badili Build</p>
               <p>Badili AI</p>
+               <p>Badili Studio</p>
+              <p>Badili Build</p>
+               <p>Badili Consult</p>
             </div>
           </div>
 
