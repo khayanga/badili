@@ -406,6 +406,7 @@ export default function Hero() {
       src="/hero2.jpg"
       alt=""
       fill
+      sizes="(max-width: 768px) 90vw, (max-width: 1200px) 40vw, 240px"
       className="object-cover"
     />
   </motion.div>
@@ -421,6 +422,7 @@ export default function Hero() {
       src="/hero1.jpg"
       alt=""
       fill
+      sizes="(max-width: 768px) 80vw, (max-width: 1200px) 35vw, 210px"
       className="object-cover"
     />
   </motion.div>
@@ -436,6 +438,7 @@ export default function Hero() {
       src="/hero4.jpg"
       alt=""
       fill
+      sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 300px"
       className="object-cover"
     />
   </motion.div>

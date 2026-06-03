@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import FadeUp from "./FadeUp";
-
+import Link from "next/link";
 
 const cases = [
   {
@@ -10,6 +10,7 @@ const cases = [
     brand: "Badiili Digital Marketing Agency",
     location: "Nairobi",
     industry: "Digital Marketing",
+    href: "https://badiili.arbarnegroup.com/",
     services: ["Brand Strategy", "Web Design", "Growth Marketing"],
     description:
       "A strategic branding and digital growth agency helping sustainable, agricultural, and impact-driven businesses communicate their value, strengthen visibility, and scale their impact.",
@@ -21,6 +22,7 @@ const cases = [
     gradient: "from-green-500 to-lime-500",
     brand: "Future Farms Initiative",
     location: "Nairobi",
+    href: "https://www.futurefarms.africa/",
     industry: "Agriculture & Agritech",
     services: ["Branding", "Digital Strategy"],
     description:
@@ -33,6 +35,7 @@ const cases = [
     gradient: "from-cyan-500 to-sky-500",
     brand: "Aysha Kiu Maji Safi",
     location: "Mombasa",
+    href: "https://www.ayshakiumajisafi.co.ke/",
     industry: "Clean Water Solutions",
     services: ["Brand Identity", "Marketing"],
     description:
@@ -44,6 +47,7 @@ const cases = [
     initials: "VG",
     gradient: "from-lime-500 to-green-600",
     brand: "Versatile Growers",
+    href: "https://www.versatilegrowers.co.ke/",
     location: "Kajiado",
     industry: "Farming",
     services: ["Branding", "Content"],
@@ -57,6 +61,7 @@ const cases = [
     gradient: "from-blue-500 to-cyan-600",
     brand: "Shambany by Arbarne",
     location: "Kenya",
+    href: "/",
     industry: "Agritech Platform",
     services: ["UI/UX", "Product Strategy"],
     description:
@@ -68,6 +73,7 @@ const cases = [
     initials: "FA",
     gradient: "from-sky-500 to-cyan-700",
     brand: "Fish by Adili",
+    href: "/",
     location: "Kenya",
     industry: "Fish Processing",
     services: ["Brand Strategy", "Marketing"],
@@ -80,6 +86,7 @@ const cases = [
     initials: "GL",
     gradient: "from-green-600 to-emerald-500",
     brand: "Greentalos Farm Logistics",
+    href: "/",
     location: "Kenya",
     industry: "Agri-Transport & Logistics",
     services: ["Digital Identity", "Strategy"],
@@ -93,6 +100,7 @@ const cases = [
     gradient: "from-emerald-500 to-teal-500",
     brand: "Afriponics Cooperative",
     location: "Kenya",
+    href: "/",
     industry: "Agricultural Cooperative",
     services: ["Branding", "Communications"],
     description:
@@ -100,8 +108,6 @@ const cases = [
     outcome: "Enhanced cooperative visibility",
   },
 ];
-
-
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
@@ -135,8 +141,6 @@ function Logo({
   );
 }
 
-
-
 export default function CaseStudies() {
   return (
     <section
@@ -154,7 +158,6 @@ export default function CaseStudies() {
             <span className="h-px w-8 bg-primary/40" />
             Selected Case Studies
           </div>
-
         </FadeUp>
 
         <div className=" p-4 flex flex-col justify-between md:flex-row md:items-center gap-5 mb-12">
@@ -167,9 +170,9 @@ export default function CaseStudies() {
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="max-w-md text-lg text-slate-600 dark:text-white/60 leading-relaxed font-light  md:text-right mb-14">
-              From agriculture and sustainability to logistics and technology 
-              we help purpose-driven brands communicate clearly, scale
-              visibility, and build stronger digital experiences.
+              From agriculture and sustainability to logistics and technology we
+              help purpose-driven brands communicate clearly, scale visibility,
+              and build stronger digital experiences.
             </p>
           </FadeUp>
         </div>
@@ -182,10 +185,15 @@ export default function CaseStudies() {
                 {/* Top */}
                 <div className="flex items-start justify-between mb-6">
                   <Logo initials={c.initials} gradient={c.gradient} size="md" />
-
-                  <div className="w-8 h-8 rounded-full border border-slate-200 dark:border-cyan-500/10 bg-slate-100 dark:bg-cyan-500/5 flex items-center justify-center text-cyan-600 dark:text-cyan-300 text-xs group-hover:translate-x-0.5 transition-transform">
+                  <Link
+                    href={c.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                     className="w-8 h-8 rounded-full border border-slate-200 dark:border-cyan-500/10 bg-slate-100 dark:bg-cyan-500/5 flex items-center justify-center text-cyan-600 dark:text-cyan-300 text-xs group-hover:translate-x-0.5 transition-transform"
+                  >
+                    {" "}
                     <ArrowRight size={14} />
-                  </div>
+                  </Link>
                 </div>
 
                 {/* Content */}
@@ -235,4 +243,4 @@ export default function CaseStudies() {
       </div>
     </section>
   );
-}
+} 
