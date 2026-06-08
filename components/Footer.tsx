@@ -9,11 +9,11 @@ export default function Footer() {
           <div>
             <div className=" p-2 inline-block ">
               <Image
-                src="/2.png"
+                src="/footer.png"
                 alt="Logo"
-                width={100}
-                height={40}
-                className="h-20 w-auto rounded-full"
+                width={150}
+                height={70}
+                className="h-32 w-auto rounded-md"
               />
             </div>
 

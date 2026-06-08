@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const cases = [
   {
-    id: "badiili",
-    initials: "B",
+    id: "Sherytoes",
+    initials: "SH",
     gradient: "from-cyan-500 to-blue-600",
-    brand: "Badiili Digital Marketing Agency",
+    brand: "Sherytoes",
     location: "Nairobi",
     industry: "Digital Marketing",
     href: "https://badiili.arbarnegroup.com/",
@@ -33,7 +33,7 @@ const cases = [
     id: "aysha",
     initials: "AK",
     gradient: "from-cyan-500 to-sky-500",
-    brand: "Aysha Kiu Maji Safi",
+    brand: "Aysha Kiu Maji Safi Initiative",
     location: "Mombasa",
     href: "https://www.ayshakiumajisafi.co.ke/",
     industry: "Clean Water Solutions",
@@ -55,58 +55,9 @@ const cases = [
       "Built a modern agricultural brand presence focused on sustainability, reliability, and stronger market trust.",
     outcome: "Stronger market positioning",
   },
-  {
-    id: "shambany",
-    initials: "SB",
-    gradient: "from-blue-500 to-cyan-600",
-    brand: "Shambany by Arbarne",
-    location: "Kenya",
-    href: "/",
-    industry: "Agritech Platform",
-    services: ["UI/UX", "Product Strategy"],
-    description:
-      "Designed and positioned a digital farm management platform helping farmers efficiently manage operations and planning.",
-    outcome: "Improved digital experience",
-  },
-  {
-    id: "fishbyadili",
-    initials: "FA",
-    gradient: "from-sky-500 to-cyan-700",
-    brand: "Fish by Adili",
-    href: "/",
-    location: "Kenya",
-    industry: "Fish Processing",
-    services: ["Brand Strategy", "Marketing"],
-    description:
-      "Created a trustworthy and modern brand direction for a sustainable fish processing and distribution company.",
-    outcome: "Clear sustainability messaging",
-  },
-  {
-    id: "greentalos",
-    initials: "GL",
-    gradient: "from-green-600 to-emerald-500",
-    brand: "Greentalos Farm Logistics",
-    href: "/",
-    location: "Kenya",
-    industry: "Agri-Transport & Logistics",
-    services: ["Digital Identity", "Strategy"],
-    description:
-      "Crafted a professional logistics identity helping farmers transport produce efficiently and access markets reliably.",
-    outcome: "Farmer-focused logistics positioning",
-  },
-  {
-    id: "afriponics",
-    initials: "AC",
-    gradient: "from-emerald-500 to-teal-500",
-    brand: "Afriponics Cooperative",
-    location: "Kenya",
-    href: "/",
-    industry: "Agricultural Cooperative",
-    services: ["Branding", "Communications"],
-    description:
-      "Supported a farmer-centered cooperative with branding and communication systems designed to improve visibility and trust.",
-    outcome: "Enhanced cooperative visibility",
-  },
+ 
+  
+ 
 ];
 
 function Tag({ children }: { children: React.ReactNode }) {

@@ -46,7 +46,7 @@ const services = [
   {
     name: "Badiili Consult",
     sub: "Consulting & Training",
-    desc: "Equipping teams with the strategy and tools to scale sustainably and lead with confidence.",
+    desc: "Empowering organizations with digital marketing expertise, AI tools, and data-driven strategies to grow, innovate, and lead with confidence.",
     icon: (
       <svg
         viewBox="0 0 24 24"

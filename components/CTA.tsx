@@ -206,10 +206,7 @@ export default function CTA() {
           </h2>
 
           <p className="mb-10 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Your purpose-driven brand deserves a
-            partner who understands that growth and
-            impact aren&apos;t opposites they work
-            together.
+            Your purpose-driven brand deserves a partner who understands that growth and impact work together.
           </p>
 
           {/* PROOF POINTS */}
@@ -412,10 +409,10 @@ export default function CTA() {
                       </option>
 
                       {[
-                        "Digital Marketing (Badili Grow)",
-                        "Branding & Design (Badili Studio)",
-                        "Web Design & Development (Badili Build)",
-                        "Consulting & Training (Badili Consult)",
+                        "Digital Marketing (Badiili AI)",
+                        "Branding & Design (Badiili Studio)",
+                        "Web Design & Development (Badiili Build)",
+                        "Consulting & Training (Badiili Consult)",
                         "Not sure yet — I need guidance",
                       ].map((s) => (
                         <option

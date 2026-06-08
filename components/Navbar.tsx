@@ -23,7 +23,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" >
-          <Image src="/1.png" alt=" Logo" width={50} height={50} loading="eager"
+          <Image src="/nav.png" alt=" Logo" width={50} height={50} loading="eager"
           className="inline-block mr-2 width:auto height:auto rounded-full" />
            
         </Link>
